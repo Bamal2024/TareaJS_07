@@ -49,9 +49,9 @@ cantidad a agregar. Usa un try...catch para verificar*/
 function actualizarStock(nombreProducto, cantidad) {
     try {
         const producto = products.find(p => p.nombre === nombreProducto);
-        if (!producto) throw new Error(`Producto "${nombreProducto}" no encontrado.`);
+        if (!producto) throw new Error('Producto ', nombreProducto, 'no encontrado.');
         producto.stock += cantidad;
-        console.log(`Stock actualizado: ${nombreProducto} tiene ahora ${producto.stock} unidades.`);
+        console.log('Stock actualizado: ', nombreProducto, ' tiene ahora ', producto.stock, ' unidades.');
     } catch (error) {
         console.error(error.message);
     }
