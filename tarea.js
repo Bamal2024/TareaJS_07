@@ -46,9 +46,10 @@ console.log("3.- Productos con stock bajo:", productoStockBajo);
 
 /*4. Actualizar el Stock de un Producto: Crea una función que reciba el nombre de un producto y una 
 cantidad a agregar. Usa un try...catch para verificar*/
+console.log("4.- Verificacion de actualizar stock")
 function actualizarStock(nombreProducto, cantidad) {
     try {
-        const producto = products.find(p => p.nombre === nombreProducto);
+        const producto = products.find(p => p.name === nombreProducto);
         if (!producto) throw new Error(`Producto "${nombreProducto}" no encontrado.`);
         ;
         producto.stock += cantidad;
@@ -58,9 +59,11 @@ function actualizarStock(nombreProducto, cantidad) {
     }
 }
 
+console.log("Comprobando productos que no existen el array");
 actualizarStock("Smart TV", 5);
 actualizarStock("Comedor Terraza", 3);
-
+console.log("Comprobando producto que si existe");
+actualizarStock("Leche", 25);
 
 /*5. Resumen por Categorías: Usa un bucle para contar cuántos productos hay en cada categoría (electrónica, 
 hogar, alimentos) y devuelve un objeto con este resumen.*/
